@@ -84,7 +84,7 @@ export const like = async (req, res, next) => {
 };
 export const dislike = async (req, res, next) => {
   const id = req.user.id;
-  const videoId = req.params.videoId;
+  const videoId = req.user.videoId;
 
   try {
     await Video.findByIdAndUpdate(videoId, {
